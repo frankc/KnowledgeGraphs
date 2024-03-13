@@ -1,0 +1,47 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.2.3'
+	id 'io.spring.dependency-management' version '1.1.4'
+	id 'com.vaadin' version '24.3.6'
+	id 'com.github.johnrengelman.shadow' version '7.0.0'
+}
+
+shadowJar {
+	mergeServiceFiles()
+}
+
+group = 'com.codesupreme'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	sourceCompatibility = '17'
+}
+
+repositories {
+	mavenCentral()
+	maven {
+		url "https://repo1.maven.org/maven2"
+	}
+}
+
+ext {
+	set('vaadinVersion', "24.3.6")
+}
+
+dependencies {
+	implementation 'com.vaadin:vaadin-spring-boot-starter'
+	implementation 'org.apache.jena:jena-core:5.0.0-rc1'
+	implementation 'org.apache.jena:jena-arq:5.0.0-rc1'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+dependencyManagement {
+	imports {
+		mavenBom "com.vaadin:vaadin-bom:${vaadinVersion}"
+	}
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
