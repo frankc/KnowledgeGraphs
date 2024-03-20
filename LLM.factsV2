@@ -1,0 +1,141 @@
+@prefix : <http://codesupreme.com/> .
+@prefix cs: <http://codesupreme.com/> .
+
+@prefix schema: <http://www.schema.org/> .
+@prefix s: <http://www.schema.org/> .
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+# v 3.1.24
+# Classes  ------------------------
+
+# ++++++  cs: classes for LLMs ++++++++++++++++++++++
+cs:LLM a rdf:Class, cs:AiAlgorithm .
+cs:Algorithm a rdf:Class.
+cs:Software a rdf:Class .
+cs:Framework a rdf:Class .
+cs:Model a rdf:Class .
+cs:OpenSourceModel rdfs:subClassOf cs:Model .
+cs:ImageGenerator a rdf:Class .
+
+# People and Companies
+schema:Person  a rdf:Class .
+schema:Company a rdf:Class .
+
+# RDFS Subclasses and domain range descriptions
+cs:Framework rdfs:subClassOf schema:CreativeWork .
+cs:Algorithm rdfs:subClassOf schema:CreativeWork .
+cs:Model rdfs:subClassOf schema:CreativeWork .
+cs:ImageGenerator rdfs:subClassOf schema:CreativeWork .
+cs:AiAlgorithm rdfs:subClassOf cs:Algorithm .
+
+# ______________ END CLASSES ++++++++++++++++++++++
+
+
+
+# Entities - described as instance of a  rdf:Type  -------
+
+# Frameworks
+cs:Autogen rdf:type cs:Framework .
+cs:Autogen schema:description "multi-agent framework" .
+cs:Autogen schema:creator cs:Meta .
+cs:Autogen schema:keywords "multi-agent, framework" .
+
+
+:LangChain a cs:Framework .
+:LangChain s:description "designed for building applications that leverage large language models (LLMs)" .
+
+
+:Streamlit a cs:Framework .
+:StreamLit s:description "A python framework that enables the creation of interactive web applications very simply" . 
+
+cs:StreamLit rdf:type cs:Algorithm .
+cs:StreamLit schema:description "UI Algorithm prototype AI/ML apps" .
+cs:StreamLit schema:creator cs:OpenSource .
+cs:StreamLit schema:keywords "framework, UI" .
+
+cs:DSPy rdf:type cs:Framework .
+cs:DSPy schema:description "replaces prompting with coding and compiling using declarative language" .
+cs:DSPy schema:creator cs:StanfordU .
+cs:DSPy schema:keywords "declarative programming, prompting" .
+
+
+cs:GPT a cs:Model .
+
+cs:GoogleAI a schema:Company .
+cs:Google   a schema:Company .
+cs:Meta 	a schema:Company .
+cs:OpenAI 	a schema:Company .
+
+# Actual LLMs
+cs:GPT3 a cs:Software, cs:LLM; s:dateCreated 2020 .
+cs:GPT4 a cs:Software ,cs:LLM; s:dateCreated 2022 .
+cs:GPT5 a cs:Software ,cs:LLM .
+cs:Mistral7B a cs:Software ,cs:LLM .
+
+cs:BERT a cs:Software, cs:LLM; s:dateCreated 2018; s:creator: cs:GoogleAI; s:alternateName "Bidirectional Encoder Representation from Transformers"  .
+cs:LaMDA a cs:Software, cs:LLM; s:dateCreated 2023; s:creator: cs:Google; s:description "specializes in conversational AI" .
+cs:LLaMA a cs:Software, cs:LLM; s:dateCreated 2023; s:creator: cs:Meta; s:description "efficient and scalable, fewer parameters, high accuracy" .
+
+# Image Generators
+cs:Gligen a cs:ImageGenerator .
+cs:SORA 	a cs:ImageGenerator .
+cs:SORA rdf:type cs:Algorithm .
+cs:SORA schema:description "text to video software" .
+cs:SORA schema:creator cs:OpenAI .
+cs:SORA schema:keywords "text to video" .
+
+
+
+# assume not liking humans only creative works
+:likes rdf:type rdf:Property ;
+           rdfs:domain schema:Person ;
+           rdfs:range schema:CreativeWork .
+           
+
+
+:OpenAI a s:Company .
+:OpenAI s:owns :ChatGPT, :GPT3, :GPT4, :GPT5 .
+
+
+cs:Transformer a cs:NeuralNetArchitecture .
+cs:NeuralNetArchitecture a cs:Architecture .
+
+cs:DALL-E a cs:Software .
+
+
+         
+
+# Test domain range
+:Rollo :likes :GPT4 .
+
+
+cs:ContextWindow schema:IsRelatedTo cs:NLP .
+cs:Anthropic schema:owns cs:Claud .
+cs:DiscoveryPartner a s:Company .
+cs:ClaudeInstant a cs:LLM .
+cs:Claude2 a cs:LLM .
+
+:Copilot a cs:Software, cs:LLM .
+:Microsoft a s:Company; s:owns :Copilot .
+:Meta a s:Company .
+:Google a s:Company .
+:GoogleAI a s:Company .
+
+cs:txtai a cs:Database; s:contains cs:Embeddings .
+
+:HuggingFace a cs:Database; s:contains :LLM .
+
+:DeepLearningArchitecture a :Architecture .
+
+:Rollo :likes :GPT4 .
+
+
+
+	
+
+
+
+
