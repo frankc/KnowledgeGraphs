@@ -1,0 +1,173 @@
+PREFIX cs:     <http://codesupreme.com/>
+PREFIX rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:   <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX schema: <http://www.schema.org/>
+
+cs:GoogleAI  rdf:type  schema:Company .
+
+cs:GPT4  rdf:type           rdfs:Resource , schema:CreativeWork , cs:Software , cs:LLM;
+        schema:dateCreated  2022 .
+
+cs:DSPy  rdf:type           schema:CreativeWork , rdfs:Resource , cs:Framework;
+        schema:creator      cs:StanfordU;
+        schema:description  "replaces prompting with coding and compiling using declarative language";
+        schema:keywords     "declarative programming, prompting" .
+
+cs:StreamLit  rdf:type      rdfs:Resource , schema:CreativeWork , cs:Algorithm;
+        schema:creator      cs:OpenSource;
+        schema:description  "A python framework that enables the creation of interactive web applications very simply" , "UI Algorithm prototype AI/ML apps";
+        schema:keywords     "framework, UI" .
+
+cs:Architecture  rdf:type  rdfs:Resource , rdfs:Class .
+
+cs:Edge  rdf:type  cs:Browser .
+
+cs:DALL-E  rdf:type  cs:Software .
+
+cs:Mistral7B  rdf:type  cs:Software , cs:LLM .
+
+cs:LionAGI  rdf:type        schema:CreativeWork , rdfs:Resource , cs:Framework;
+        schema:description  "builds vector index from documents - vector index provides query param'd service with response_mode(s) e.g. tree_summarize" .
+
+cs:SatyaNadella  rdf:type  rdfs:Resource , schema:Person;
+        cs:CEO    cs:Microsoft .
+
+cs:Framework  rdf:type   rdfs:Resource , rdfs:Class , rdf:Class;
+        rdfs:subClassOf  rdfs:Resource , cs:Framework , schema:CreativeWork .
+
+cs:AiAlliance  rdf:type  schema:Organization;
+        cs:member  cs:Meta , cs:IBM , cs:NSF , cs:LinuxFoundation , cs:HuggingFace , cs:xAi .
+
+cs:ContextWindow  schema:IsRelatedTo  cs:NLP .
+
+cs:Browser  rdf:type  rdfs:Resource , rdfs:Class .
+
+cs:Gligen  rdf:type  schema:CreativeWork , rdfs:Resource , cs:ImageGenerator .
+
+cs:xAi  cs:owner  cs:ElonMusk .
+
+cs:SORA  rdf:type           rdfs:Resource , schema:CreativeWork , cs:ImageGenerator , cs:Algorithm;
+        schema:creator      cs:OpenAI;
+        schema:description  "text to video software";
+        schema:keywords     "text to video" .
+
+cs:BERT  rdf:type             cs:Software , cs:LLM;
+        schema:alternateName  "Bidirectional Encoder Representation from Transformers";
+        schema:creator:       cs:GoogleAI;
+        schema:dateCreated    2018 .
+
+cs:DeepMind  rdf:type  schema:Company;
+        cs:acquiredBy  cs:Google .
+
+cs:FrontierModelForum
+        rdf:type   schema:Organization;
+        cs:member  cs:Apple , cs:Amazon , cs:OpenAI .
+
+cs:GPT  rdf:type  schema:CreativeWork , rdfs:Resource , cs:Model .
+
+cs:MicrosoftConsumerAI
+        schema:includes  cs:Copilot , cs:Bing , cs:Edge .
+
+cs:ChatBot  rdf:type  rdfs:Resource , rdfs:Class .
+
+cs:MustafaSuleyman  rdf:type  rdfs:Resource , schema:Person;
+        cs:coFounded      cs:DeepMind;
+        cs:leading        cs:MicrosoftConsumerAI;
+        schema:authorOf   cs:TheComingWave;
+        schema:reportsTo  cs:SatyaNadella .
+
+cs:GPT3  rdf:type           cs:Software , cs:LLM;
+        schema:dateCreated  2020 .
+
+cs:Anthropic  schema:owns  cs:Claud .
+
+cs:txtai  rdf:type       cs:Database;
+        schema:contains  cs:Embeddings .
+
+cs:ElonMusk  rdf:type  rdfs:Resource , schema:Person .
+
+cs:DiscoveryPartner  rdf:type  schema:Company .
+
+cs:Algorithm  rdf:type   rdfs:Resource , rdfs:Class , rdf:Class;
+        rdfs:subClassOf  rdfs:Resource , cs:Algorithm , schema:CreativeWork .
+
+cs:Streamlit  rdf:type  schema:CreativeWork , rdfs:Resource , cs:Framework .
+
+cs:Microsoft  rdf:type  schema:Company;
+        schema:owns  cs:Copilot .
+
+cs:Claude2  rdf:type  cs:LLM .
+
+cs:GPT5  rdf:type  cs:Software , cs:LLM .
+
+cs:Copilot  rdf:type  cs:Software , cs:LLM , cs:ChatBot .
+
+cs:Software  rdf:type  rdfs:Resource , rdfs:Class , rdf:Class .
+
+cs:Bing  rdf:type  cs:SearchEngine .
+
+cs:LLaMA  rdf:type          cs:Software , cs:LLM;
+        schema:creator:     cs:Meta;
+        schema:dateCreated  2023;
+        schema:description  "efficient and scalable, fewer parameters, high accuracy" .
+
+cs:ClaudeInstant  rdf:type  cs:LLM .
+
+cs:Database  rdf:type  rdfs:Resource , rdfs:Class .
+
+cs:Autogen  rdf:type        schema:CreativeWork , rdfs:Resource , cs:Framework;
+        schema:creator      cs:Meta;
+        schema:description  "multi-agent framework";
+        schema:keywords     "multi-agent, framework" .
+
+cs:Transformer  rdf:type  cs:NeuralNetArchitecture .
+
+cs:AiAlgorithm  rdf:type  rdfs:Resource , rdfs:Class;
+        rdfs:subClassOf  schema:CreativeWork , rdfs:Resource , cs:AiAlgorithm , cs:Algorithm .
+
+cs:Rollo  rdf:type  rdfs:Resource , schema:Person;
+        cs:likes  cs:GPT4 .
+
+cs:DeepLearningArchitecture
+        rdf:type  cs:Architecture .
+
+cs:Google  rdf:type  schema:Company .
+
+cs:OpenSourceModel  rdf:type  rdfs:Resource , rdfs:Class;
+        rdfs:subClassOf  schema:CreativeWork , rdfs:Resource , cs:OpenSourceModel , cs:Model .
+
+cs:Meta  rdf:type  schema:Company .
+
+cs:LaMDA  rdf:type          cs:Software , cs:LLM;
+        schema:creator:     cs:Google;
+        schema:dateCreated  2023;
+        schema:description  "specializes in conversational AI" .
+
+cs:likes  rdf:type          rdfs:Resource , rdf:Property;
+        rdfs:domain         schema:Person;
+        rdfs:range          schema:CreativeWork;
+        rdfs:subPropertyOf  cs:likes .
+
+cs:NeuralNetArchitecture
+        rdf:type  rdfs:Resource , rdfs:Class , cs:Architecture .
+
+cs:OpenAI  rdf:type  schema:Company;
+        schema:owns  cs:ChatGPT , cs:GPT3 , cs:GPT4 , cs:GPT5 .
+
+cs:LangChain  rdf:type      schema:CreativeWork , rdfs:Resource , cs:Framework;
+        schema:description  "designed for building applications that leverage large language models (LLMs)" .
+
+cs:Model  rdf:type       rdfs:Resource , rdfs:Class , rdf:Class;
+        rdfs:subClassOf  rdfs:Resource , cs:Model , schema:CreativeWork .
+
+cs:LLM  rdf:type  schema:CreativeWork , cs:Algorithm , rdfs:Resource , rdfs:Class , rdf:Class , cs:AiAlgorithm .
+
+cs:SearchEngine  rdf:type  rdfs:Resource , rdfs:Class .
+
+cs:ImageGenerator  rdf:type  rdfs:Resource , rdfs:Class , rdf:Class;
+        rdfs:subClassOf  rdfs:Resource , cs:ImageGenerator , schema:CreativeWork .
+
+cs:HuggingFace  rdf:type  cs:Database;
+        schema:contains  cs:LLM .
+
+
