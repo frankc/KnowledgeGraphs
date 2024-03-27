@@ -8,7 +8,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 
-# v 3.1.24
+# v 3.27.24
 # Classes  ------------------------
 
 # ++++++  cs: classes for LLMs ++++++++++++++++++++++
@@ -96,11 +96,8 @@ cs:SORA schema:keywords "text to video" .
            
 
 
-
-
 :OpenAI a s:Company .
 :OpenAI s:owns :ChatGPT, :GPT3, :GPT4, :GPT5 .
-
 
 
 cs:Transformer a cs:NeuralNetArchitecture .
@@ -109,12 +106,7 @@ cs:NeuralNetArchitecture a cs:Architecture .
 cs:DALL-E a cs:Software .
 
 
-
-
-
-
-
-          
+         
 
 # Test domain range
 :Rollo :likes :GPT4 .
@@ -136,11 +128,29 @@ cs:txtai a cs:Database; s:contains cs:Embeddings .
 
 :HuggingFace a cs:Database; s:contains :LLM .
 
-
-
 :DeepLearningArchitecture a :Architecture .
 
 :Rollo :likes :GPT4 .
+
+# News NYT 2024.03.20
+:MustafaSuleyman a s:Person; s:authorOf cs:TheComingWave; s:reportsTo :SatyaNadella; cs:leading cs:MicrosoftConsumerAI; cs:coFounded cs:DeepMind .
+cs:MicrosoftConsumerAI s:includes cs:Copilot, cs:Bing, cs:Edge .
+:SatyaNadella a s:Person; cs:CEO cs:Microsoft .
+cs:Copilot a cs:ChatBot .
+cs:Bing a cs:SearchEngine .
+cs:Edge a cs:Browser .
+cs:DeepMind a s:Company; cs:acquiredBy cs:Google .
+
+cs:AiAlliance a s:Organization; cs:member cs:Meta, cs:IBM, cs:NSF, cs:LinuxFoundation, cs:HuggingFace, cs:xAi .
+cs:xAi cs:owner cs:ElonMusk .
+cs:ElonMusk a s:Person .
+
+:FrontierModelForum a s:Organization; cs:member cs:Apple, cs:Amazon, cs:OpenAI .
+
+
+# medium 2024.21.03
+:LionAGI a :Framework; s:description "builds vector index from documents - vector index provides query param'd service with response_mode(s) e.g. tree_summarize" .
+
 
 
 
