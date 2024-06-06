@@ -130,7 +130,7 @@ cs:Software  rdf:type  rdfs:Resource , rdfs:Class , rdf:Class .
 cs:Bing  rdf:type  cs:SearchEngine .
 
 cs:LLaMA  rdf:type          cs:Software , cs:LLM;
-        schema:creator:     cs:Meta;
+        schema:creator:     cs:Microsoft;
         schema:dateCreated  2023;
         schema:description  "efficient and scalable, fewer parameters, high accuracy" .
 		
